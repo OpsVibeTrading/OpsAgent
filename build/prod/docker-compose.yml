@@ -1,0 +1,56 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: opsvibe-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--requirepass", "mysecurepassword"]
+    volumes:
+      - opsvibe-redis-data:/data
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: opsvibe-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - opsvibe-postgres-data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    container_name: opsvibe-api
+    restart: unless-stopped
+    env_file:
+      - ../../.env.prod
+    ports:
+      - "80:3000"
+    environment:
+      PORT: 3000
+    depends_on:
+      - redis
+      - postgres
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    container_name: opsvibe-worker
+    restart: unless-stopped
+    env_file:
+      - ../../.env.prod
+    command: ["node", "dist/server/worker.js"]
+    depends_on:
+      - redis
+      - postgres
+
+volumes:
+  opsvibe-redis-data:
+  opsvibe-postgres-data:

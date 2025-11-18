@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    // Incremental compilation for better performance
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
+    // Environment setup & latest features
+    "lib": ["esnext"],
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    // Node.js compilation setup
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": false,
+    "noEmit": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+
+    // Path aliases
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@route/*": ["route/*"],
+      "@services/*": ["services/*"],
+      "@schema/*": ["schema/*"],
+      "@dist/*": ["dist/*"],
+      "@/*": ["*"]
+    },
+
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Some stricter flags (disabled by default)
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

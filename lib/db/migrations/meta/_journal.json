@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1761115133174,
+      "tag": "0000_perpetual_loa",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1761135026474,
+      "tag": "0001_panoramic_aaron_stack",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1761143885031,
+      "tag": "0002_rare_grim_reaper",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1761145127737,
+      "tag": "0003_tiresome_mister_fear",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1761197711148,
+      "tag": "0004_blue_red_ghost",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1761205779624,
+      "tag": "0005_fancy_harrier",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1761214104287,
+      "tag": "0006_wise_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1761216215948,
+      "tag": "0007_lumpy_lightspeed",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1761288325277,
+      "tag": "0008_wise_sage",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1762152329082,
+      "tag": "0009_soft_madelyne_pryor",
+      "breakpoints": true
+    }
+  ]
+}

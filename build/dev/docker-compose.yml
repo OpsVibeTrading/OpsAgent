@@ -1,0 +1,26 @@
+services:
+  ai-trading-redis:
+    image: redis:7-alpine
+    container_name: ai-trading-redis-server
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ai-trading-redis-data:/data
+
+  ai-trading-postgres:
+    image: postgres:16-alpine
+    container_name: ai-trading-postgres-server
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ai-trading-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  ai-trading-redis-data:
+  ai-trading-postgres-data:

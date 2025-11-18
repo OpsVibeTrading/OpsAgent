@@ -1,0 +1,1 @@
+ALTER TABLE "order_history" ADD COLUMN "side" text NOT NULL;
